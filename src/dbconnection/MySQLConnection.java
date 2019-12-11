@@ -29,19 +29,22 @@ public class MySQLConnection {
 
     // constructor -> sekaligus melakukan koneksi ke mysql
     public MySQLConnection(String dbHost, String dbName, String dbUser, String dbPass){
+        // setting nilai atribut koneksi
         this.dbHost = dbHost;
         this.dbName = dbName;
         this.dbUser = dbUser;
         this.dbPass = dbPass;
         
         try {
+            // membuat url string connection ke mysql 
             String dbURL = "jdbc:mysql://"+ this.dbHost +":3306/" + this.dbName;
             this.conn = DriverManager.getConnection(dbURL, this.dbUser, this.dbPass);
-
+            // jika konek
             if (this.conn != null) {
                 System.out.println("Connected");
             }
         } catch (SQLException ex) {
+            // jika gagal konek
             System.out.println(ex);
         }
     }
@@ -50,6 +53,7 @@ public class MySQLConnection {
     // method untuk menutup koneksi mysql
     public void close(){
         try {
+            // tutup koneksi
             this.conn.close();
         } catch (SQLException ex) {
             System.out.println("Penutupan koneksi gagal");
