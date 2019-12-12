@@ -1,12 +1,9 @@
 package dbconnection;
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.*;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
