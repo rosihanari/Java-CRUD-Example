@@ -21,6 +21,9 @@ public class MainClass {
         b1.insert(db1, "Pemrograman Python", "Rosihan Ari", "UNS Press", 2019);
         b1.insert(db1, "Pemrograman PHP", "Rosihan Ari", "UNS Press", 2019);
         
+        Book b2 = new Book("Pemrograman Robomind", "Rosihan Ari", "UNS PRess", 2019);
+        b2.insert(db1);
+        
         //b1.delete(db1, 2);
         //b1.update(db1, 3, "Pemrograman Python", "Budiman", "UGM Press", 2017);
         //b1.select(db1);
