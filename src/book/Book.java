@@ -30,7 +30,40 @@ public class Book {
         this.yearPublished = year;
     }
     
+    public Book(){
+        
+    }
+    
     // insert data buku
+    public void insert(MySQLConnection m, String title, String author, String publisher, Integer year){
+        // lakukan koneksi ke mysql
+        Connection koneksi = m.conn;
+        
+        // query sql untuk insert data buku
+        String sql = "INSERT INTO books (bookTitle, bookAuthor, bookPublisher, yearPublished) VALUES (?, ?, ?, ?)";
+ 
+        try {
+            PreparedStatement statement = koneksi.prepareStatement(sql);
+            
+            // mapping nilai parameter dari query sql nya (sesuai urutan)
+            statement.setString(1, title);
+            statement.setString(2, author);
+            statement.setString(3, publisher);
+            statement.setString(4, year.toString());
+
+            // jalankan query (baca jumlah row affectednya)
+            int rowsInserted = statement.executeUpdate();
+            // jika ada row affected nya, maka status sukses
+            if (rowsInserted > 0) {
+                System.out.println("Insert data buku sukses");
+            }
+
+        } catch (SQLException ex) {
+            // jika query gagal
+            System.out.println("Insert data buku gagal");
+        }
+    }
+    
     public void insert(MySQLConnection m){
         // lakukan koneksi ke mysql
         Connection koneksi = m.conn;
@@ -60,6 +93,7 @@ public class Book {
         }
     }
     
+   
     // delete data buku berdasarkan idbook
     public void delete(MySQLConnection m, Integer idBook){
         
