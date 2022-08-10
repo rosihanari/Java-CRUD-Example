@@ -34,7 +34,7 @@ public class Book {
         
     }
     
-    // insert data buku
+    // insert data buku melalui method berparameter identitas buku
     public void insert(MySQLConnection m, String title, String author, String publisher, Integer year){
         // lakukan koneksi ke mysql
         Connection koneksi = m.conn;
@@ -64,6 +64,7 @@ public class Book {
         }
     }
     
+    // insert data buku dengan identitas buku diambil dari atribut buku
     public void insert(MySQLConnection m){
         // lakukan koneksi ke mysql
         Connection koneksi = m.conn;
