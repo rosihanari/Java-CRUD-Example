@@ -1,4 +1,5 @@
 # Java CRUD Example
+## Dibuat oleh: Rosihan Ari Yuana
  
 Project ini hanya sekedar contoh implementasi CRUD di Java yang dikoneksikan dengan MySQL.
 
